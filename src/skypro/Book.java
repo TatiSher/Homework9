@@ -3,12 +3,18 @@ package skypro;
 import java.util.Objects;
 
 public class Book {
+    private Author author;
     private String bookTitle;
     private int publicationYear;
 
-    public Book(String bookTitle, int publicationYear) {
+    public Book(Author author, String bookTitle, int publicationYear) {
+        this.author = author;
         this.bookTitle = bookTitle;
         this.publicationYear = publicationYear;
+    }
+
+    public Author getAuthor() {
+        return author;
     }
 
     public String getBookTitle() {
