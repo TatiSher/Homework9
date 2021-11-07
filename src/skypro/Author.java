@@ -3,19 +3,29 @@ package skypro;
 import java.util.Objects;
 
 public class Author {
-    private String authorName;
+    private String firstName;
+    private String familyName;
 
-    public Author (String authorName) {
-        this.authorName = authorName;
+
+    public Author (String firstName, String familyName) {
+        this.firstName = firstName;
+        this.familyName = familyName;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getFamilyName() {
+        return familyName;
     }
 
     @Override
     public String toString() {
-        return "Author name: " + authorName + ".";
+        return "Author{" +
+                "firstName='" + firstName + '\'' +
+                ", familyName='" + familyName + '\'' +
+                '}';
     }
 
     @Override
@@ -23,11 +33,11 @@ public class Author {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return authorName.equals(author.authorName);
+        return Objects.equals(firstName, author.firstName) && Objects.equals(familyName, author.familyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorName);
+        return Objects.hash(firstName, familyName);
     }
 }
